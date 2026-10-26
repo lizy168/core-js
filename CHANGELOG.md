@@ -11,6 +11,8 @@
 - Fixed order of `/full/promise/all-settled` entry dependencies
 - Fixed iterators dependencies of `Object.groupBy`, `Map.groupBy`, `Map.keyBy` and `Map.prototype.merge` entries and of `/es/object/` namespace
 - Fixed legacy `/full/typed-array/from-async` entry dependencies
+- Fixed detection of detached `ArrayBuffer` in `ArrayBuffer.prototype.detached`, `structuredClone` and `Uint8Array.prototype.{ toBase64, toHex, setFromBase64, setFromHex }` polyfills
+- Fixed a memory leak in `ArrayBuffer.prototype.{ transfer, transferToFixedLength }` and `structuredClone` with `transfer` polyfills in engines without a proper native `structuredClone` transfer
 - Compat data improvements:
   - `Symbol.dispose`, `Symbol.asyncDispose` and `Iterator.prototype[@@dispose]` marked as [shipped in FF141](https://bugzilla.mozilla.org/show_bug.cgi?id=1967744) instead of FF135 - before that, they were available only in Nightly
   - Updated [Electron 46](https://releases.electronjs.org/) compat data mapping
